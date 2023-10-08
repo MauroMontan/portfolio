@@ -1,0 +1,83 @@
+---
+---
+
+<script>
+  const btnwrapper = document.querySelector(".down-btn");
+  const btn = document.querySelector(".arrow-icon");
+
+  btnwrapper.addEventListener("click", () => {
+    switch (location.hash) {
+      case "#home":
+        location.hash = "#skills";
+        break;
+      case "#skills":
+        location.hash = "#projects";
+        break;
+      case "#projects":
+        location.hash = "#home";
+        break;
+
+      default:
+        break;
+    }
+  });
+
+  window.onscroll = function (ev) {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+      // you're at the bottom of the page
+      if (!btn.classList.contains("rotate")) {
+        btn.classList.add("rotate");
+      }
+    } else {
+      btn.classList.remove("rotate");
+    }
+  };
+</script>
+
+<a class="down-btn crt">
+  <i class="arrow-icon fa-solid fa-angles-down"></i>
+</a>
+
+<style>
+  .down-btn {
+    overflow: hidden;
+    color: #c0a8ed;
+    border-radius: 100%;
+    height: 50px;
+    aspect-ratio: 1/1;
+    position: fixed;
+    align-self: center;
+    bottom: 1rem;
+    border: var(--border);
+    animation: float 1s infinite both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    filter: drop-shadow(0 5px 0.75rem rgb(192, 168, 237, 0.4));
+  }
+
+  .down-btn:hover {
+    transform: translateY(0);
+    animation: none;
+    transition: all ease 0.3s;
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+    transition: all ease-in 0.5s;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0rem);
+    }
+    50% {
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+---
+
+<div class="circle-avatar">
+  <img
+    src="https://avatars.githubusercontent.com/u/68311575?v=4"
+    alt="profile picture"
+  />
+</div>
+
+<style>
+  .circle-avatar {
+    border-radius: 100%;
+    background-color: rgb(128, 128, 128, 0.1);
+    overflow: hidden;
+    border: var(--border);
+    aspect-ratio: 1/1;
+    width: 300px;
+  }
+
+  .circle-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  @media (max-width: 1140px) {
+    .circle-avatar {
+      width: 170px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .circle-avatar {
+      width: 200px;
+    }
+  }
+</style>

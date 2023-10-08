@@ -1,0 +1,28 @@
+.hljs-string {
+  color: #B3E1A7;
+}
+
+.hljs-punctuation {
+  font-weight: bold;
+  color: #E590A8;
+}
+
+.hljs-attr {
+  color: #92B3F4;
+}
+
+/*adjustment*/
+
+
+.hljs-string::before {
+  content: " ";
+}
+
+
+.hljs-punctuation::before {
+  content: " ";
+}
+
+.hljs-punctuation::after {
+  content: " ";
+}

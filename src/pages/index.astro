@@ -1,0 +1,18 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import PageSectionLayout from "../layout/PageSectionLayout.astro";
+import CustomBanner from "../components/CustomBanner.astro";
+import Header from "../components/Header.astro";
+import DownButton from "../components/DownButton.astro";
+---
+
+<MainLayout>
+	<Header />
+
+	<PageSectionLayout id="home">
+		<CustomBanner />
+	</PageSectionLayout>
+	<PageSectionLayout id="skills" />
+	<PageSectionLayout id="projects" />
+	<DownButton />
+</MainLayout>

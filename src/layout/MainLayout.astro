@@ -1,0 +1,30 @@
+---
+const cssVars = {
+  backgroundColor: "#181824",
+  border: "solid 1px rgb(70, 70, 79, 0.4);",
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Mauro Montaño porftfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mauro Montaño</title>
+    <script
+      src="https://kit.fontawesome.com/4f5510ffb6.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style define:vars={cssVars} is:global>
+  @import url(../styles/global.css);
+
+  body {
+    background-color: var(--backgroundColor);
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+import arrow from "../assets/networks-arrow.png";
+---
+
+<section class="social-network-box">
+  <img src={arrow} alt="social networks pointer" />
+  <a href="#" class="fa-brands fa-github"></a>
+  <a href="#" class="fa-brands fa-linkedin"></a>
+</section>
+
+<style>
+  .social-network-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 3rem;
+    position: relative;
+    padding: 0.5rem;
+    width: max-content;
+    animation: entersFromBottom 1.3s;
+  }
+
+  a {
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+
+  .fa-github {
+    color: whitesmoke;
+  }
+
+  .fa-linkedin {
+    color: #99b2ef;
+  }
+  img {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
+    opacity: 0.3;
+    animation: draw 2.3s;
+  }
+
+  @media (max-width: 768px) {
+    .social-network-box {
+      animation: enterFromLeft 1.3s;
+    }
+    img {
+      display: none;
+    }
+  }
+
+  @keyframes draw {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes entersFromTop {
+    0% {
+      transform: translateY(-200px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

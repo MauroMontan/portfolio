@@ -1,0 +1,88 @@
+---
+import ResumeButton from "./ResumeButton.astro";
+---
+
+<script>
+  // Using ES6 import syntax
+  import hljs from "highlight.js/lib/core";
+  import json from "highlight.js/lib/languages/json";
+
+  // Then register the languages you need
+  hljs.registerLanguage("json", json);
+
+  const codeblock = document.querySelector(".code-block");
+  const highlightedCode = hljs.highlight(
+    `{
+      "name" : "Mauro Miguel Anastacio Montaño",
+      
+      "age" : 23,
+
+      "pronouns" : [ "He" , "Him" ], 
+
+      "favourite_tecnologies": ["Vue js", "Nest Js","Docker"],
+
+      "favorite_languages": ["Go","Js","Dart","C++","Swift"]
+  }
+  `,
+    {
+      language: "json",
+    }
+  ).value;
+
+  codeblock.innerHTML = highlightedCode;
+</script>
+
+<pre
+  class="code-box crt">
+  <ResumeButton />
+  <h4 class="code-title">Aboutme.json <div class="caret" /> </h4>
+  <code class="code-block"> </code>
+</pre>
+
+<style>
+  .code-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding-inline-start: 0.8rem;
+    padding-block: 1rem;
+    min-height: 20rem;
+    border: var(--border);
+    border-radius: 0.8rem;
+    margin-inline: auto;
+    background-color: #11111a;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    position: relative;
+    animation: enterFromRight 0.7s;
+  }
+
+  code {
+    font-family: "Fira Sans", sans-serif;
+  }
+
+  .code-title {
+    opacity: 0.3;
+    display: flex;
+  }
+
+  .caret {
+    background-color: yellow;
+    width: 6px;
+    animation: appear 1s infinite;
+  }
+
+  @media (max-width: 1140px) {
+    .code-box {
+      font-size-adjust: 0.4;
+    }
+  }
+  @media (max-width: 768px) {
+    .code-box {
+      width: 100%;
+      font-size-adjust: 0.33;
+    }
+  }
+</style>

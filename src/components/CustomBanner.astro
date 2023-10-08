@@ -1,0 +1,121 @@
+---
+import CircleAvatar from "./CircleAvatar.astro";
+import SocialNerworksBox from "./SocialNetworkBox.astro";
+import Code from "./Code.astro";
+---
+
+<div class="banner" role="banner" aria-label="page banner">
+  <section class="about">
+    <section class="presentation">
+      <CircleAvatar />
+      <h1 id="my-name" class="text-gradient">Mauro Montaño</h1>
+    </section>
+
+    <article>
+      <p class="paragraph text-gradient">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quasi
+        itaque architecto esse numquam perspiciatis officiis nemo est tenetur
+        quisquam voluptatem, at ullam exercitationem quas unde voluptatibus
+        expedita aut explicabo.
+      </p>
+    </article>
+  </section>
+
+  <section class="interactions">
+    <SocialNerworksBox />
+    <Code />
+  </section>
+</div>
+
+<style>
+  .banner {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #my-name {
+    font-size: 4rem;
+  }
+
+  .about {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 50%;
+    max-width: 50%;
+  }
+
+  .presentation {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    animation: enterFromLeft 1s;
+  }
+
+  .paragraph {
+    animation: appear 4s;
+  }
+
+  .paragraph:first-letter {
+    font-size: 2rem;
+  }
+
+  .interactions {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  @media (max-width: 1140px) {
+    .banner {
+      width: 100%;
+      padding-top: 4rem;
+    }
+    .about {
+      min-width: 45%;
+      max-width: 45%;
+    }
+
+    .interactions {
+      width: 100%;
+    }
+    #my-name {
+      font-size: 3rem;
+    }
+    .presentation {
+      align-items: start;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .presentation {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    .banner {
+      flex-direction: column;
+    }
+    .about {
+      width: 100%;
+      max-width: 100%;
+    }
+    #my-name {
+      font-size: 3rem;
+    }
+    .interactions {
+      width: 100%;
+    }
+  }
+</style>
