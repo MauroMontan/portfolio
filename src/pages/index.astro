@@ -4,6 +4,8 @@ import PageSectionLayout from "../layout/PageSectionLayout.astro";
 import CustomBanner from "../components/CustomBanner.astro";
 import Header from "../components/Header.astro";
 import DownButton from "../components/DownButton.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectGrid from "../layout/ProjectGrid.astro";
 ---
 
 <MainLayout>
@@ -12,7 +14,26 @@ import DownButton from "../components/DownButton.astro";
 	<PageSectionLayout id="home">
 		<CustomBanner />
 	</PageSectionLayout>
-	<PageSectionLayout id="skills" />
-	<PageSectionLayout id="projects" />
+	<PageSectionLayout id="projects">
+		<ProjectGrid>
+			<ProjectCard
+				description="This API provides Don't Starve Together information"
+				github="https://github.com/MauroMontan/dont-starve-together-api"
+				link="https://dont-starve-together-api.xyz"
+				urlImage="https://github.com/MauroMontan/dont-starve-together-assets/raw/main/banner.png"
+				title="Don't Starve Together Api"
+				tags={[
+					"Typescript",
+					"Go",
+					"GraphQl",
+					"NestJs",
+					"Astro",
+					"Vue",
+					"Deta",
+					"Go Fiber",
+				]}
+			/>
+		</ProjectGrid>
+	</PageSectionLayout>
 	<DownButton />
 </MainLayout>
